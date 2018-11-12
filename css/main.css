@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
+html {
+    background-color: hsl(203deg 100% 20%);
+    font-family: "Oswald", arial, sans-serif;
+}
+
+.page {
+    display: none;
+}
+
+li {
+    list-style-type: none;
+    font-size: 3rem;
+    margin: 10px;
+    border: groove hsl(230deg 90% 55%) 15px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+body {
+    background-color: hsl(200deg 100% 50%);
+}
+
+#digits {
+    text-align: center;
+}
+
+#btnSend {
+    background-color: hsl(215deg 100% 50%);
+    color: rgb(1 1 1);
+    padding: 15px 15px;
+    font-size: 20px;
+}
+
+#btnBack{
+    background-color: rgb(1 1 1);
+    color: rgb(240 240 240);
+    padding: 5px 5px;
+}
+
+#btnSend:hover , 
+#btnBack:hover{
+    background-color: hsl(10deg 100% 55%);
+}
+
+
+
+
+/*********************************************
+                Media Queries
+*********************************************/
+
+
+@media (min-width: 950px) {
+    .main {
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows: 2;
+    }
+
+    .main > p,
+    header > h1 {
+        text-align: center;
+    }
+
+    .main p:nth-child(1) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 1;
+        grid-column: 1;
+
+    }
+
+    .main p:nth-child(2) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .main p:nth-child(3) {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 949px) {
+    .main {
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows: 2;
+    }
+
+    .main > p,
+    header > h1 {
+        text-align: center;
+    }
+
+    .main p:nth-child(1) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 1;
+        grid-column: 1;
+
+    }
+
+    .main p:nth-child(2) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .main p:nth-child(3) {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    }
+}
+
+
+@media (max-width: 499px) {
+    .main {
+        display: grid;
+        grid-template-columns: 2;
+        grid-template-rows: 2;
+    }
+
+
+    .main > p,
+    header > h1 {
+        text-align: center;
+    }
+
+    .main p:nth-child(1) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 1;
+        grid-column: 1;
+
+    }
+
+    .main p:nth-child(2) {
+        border: solid rgb(1 1 1) 1px;
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .main p:nth-child(3) {
+        grid-row: 1 / span 2;
+        grid-column: 2;
+    }
+}
+
+.ball {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.ball:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: hsl(110deg 80% 55%);
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -50%;
+    margin-top: -50%;
+}
+
+.ball-1:before {
+    transform: translateX(-150%);
+    animation: 1s ease-out 0s infinite left;
+}
+
+.ball-2:before {
+    transform: translateX(-50%);
+}
+
+.ball-3:before {
+    transform: translateX(50%);
+}
+
+.ball-4:before {
+    transform: translateX(150%);
+    animation: 1s ease-out 0s infinite right;
+}
+
+@keyframes left {
+    25% {
+        transform: translateX(-250%);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: translateX(-150%);
+    }
+}
+
+@keyframes right {
+    50% {
+        transform: translateX(150%);
+    }
+
+    75% {
+        transform: translateX(250%);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translateX(150%);
